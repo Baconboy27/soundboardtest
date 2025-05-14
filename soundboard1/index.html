@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Play Soundboard</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Soundboard1</h1>
+
+    <div class="button-container">
+        <button id="btn-clash" class="sound-button" onclick="playAudio('clash')">Play Clash</button>
+        
+&nbsp;
+        
+        <button id="btn-ding" class="sound-button" onclick="playAudio('ding')">Play Ding</button>
+        
+&nbsp;       
+        
+        <button id="btn-dialup" class="sound-button" onclick="playAudio('dial_up')">Play Dial Up</button>
+        
+</div>
+       
+&nbsp; 
+    
+    <div class="button-container">
+
+        <button id="btn-cfrog" class="sound-button" onclick="playAudio('cfrog')">Play Crazy Frog</button>
+        
+&nbsp;
+        
+        <button id="btn-jump" class="sound-button" onclick="playAudio('jump')">Play Jump</button>
+        
+&nbsp;
+        
+        <button id="btn-money" class="sound-button" onclick="playAudio('money')">Play Money</button>
+    </div>
+
+&nbsp;
+
+<div class="Stop">
+    <button id="btn-stop" class="stop-button" onclick="stopAllAudio()">STOP SOUND</button>
+</div>
+
+    <audio id="clash"><source src="clash.mp3" type="audio/mpeg"></audio>
+    <audio id="ding"><source src="ding.mp3" type="audio/mpeg"></audio>
+    <audio id="dial_up"><source src="dial_up.mp3" type="audio/mpeg"></audio>
+    <audio id="cfrog"><source src="Crazy Frog AxelF.MP3" type="audio/mpeg"></audio>
+    <audio id="jump"><source src="Jump.mp3" type="audio/mpeg"></audio>
+    <audio id="money"><source src="money.mp3" type="audio/mpeg"></audio>
+
+    <script>
+        function playAudio(soundId) {
+            let audio = document.getElementById(soundId);
+            audio.currentTime = 0; // Restart if already playing
+            audio.play();
+        }
+    
+        function stopAllAudio() {
+            let audios = document.querySelectorAll("audio");
+            audios.forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0; // Reset audio to start
+            });
+        }
+    
+    </script>
+
+
+</body>
+</html>
